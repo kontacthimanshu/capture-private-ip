@@ -1,0 +1,50 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "capture-private-ip": {
+      "projectType": "library",
+      "root": "projects/capture-private-ip",
+      "sourceRoot": "projects/capture-private-ip/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/capture-private-ip/tsconfig.lib.json",
+            "project": "projects/capture-private-ip/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/capture-private-ip/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/capture-private-ip/src/test.ts",
+            "tsConfig": "projects/capture-private-ip/tsconfig.spec.json",
+            "karmaConfig": "projects/capture-private-ip/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/capture-private-ip/tsconfig.lib.json",
+              "projects/capture-private-ip/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "capture-private-ip"
+}
