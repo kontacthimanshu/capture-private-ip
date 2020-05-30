@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CapturePrivateIpComponent } from './capture-private-ip.component';
-
-
+import { CapturePrivateIpService } from './capture-private-ip.service';
 
 @NgModule({
-  declarations: [CapturePrivateIpComponent],
+  declarations: [],
   imports: [
   ],
-  exports: [CapturePrivateIpComponent]
+  exports: [],
+  providers:[CapturePrivateIpService]
 })
 export class CapturePrivateIpModule { }
